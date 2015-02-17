@@ -16,20 +16,28 @@ textarea {
     max-width: 280px;
 }
 
-#calendar td {
+table#calendar td {
   border: 1px dotted #888;
   padding: 5px;
   width: 3.0em;
 }
-#calendar thead td {
+table#calendar thead td {
   text-align: center;
 }
-#calendar tbody td {
+table#calendar tbody td {
   text-align: right;
 }
-#calendar td:nth-child(1) {
+table#calendar td:nth-child(1) {
   color: #f00;
 }
-#calendar td:nth-child(7) {
+table#calendar td:nth-child(7) {
   color: #00f;
+}
+
+div#prev {
+  width: 21.0em;
+}
+div#next {
+  width: 21.0em;
+  text-align: right;
 }

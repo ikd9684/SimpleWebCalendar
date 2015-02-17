@@ -15,12 +15,12 @@ namespace SimpleWebCalendar
 
             routes.MapRoute(
                 name: "Default",
-                url: "",
+                url: "SimpleWebCalendar",
                 defaults: new { controller = "Home", action = "Index", }
             );
             routes.MapRoute(
                 name: "YearMonth",
-                url: "{year}/{month}",
+                url: "SimpleWebCalendar/{year}/{month}",
                 defaults: new { controller = "Home", action = "Index", }
             );
         }

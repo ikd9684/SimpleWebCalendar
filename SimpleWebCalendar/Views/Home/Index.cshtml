@@ -2,9 +2,17 @@
 @{
   ViewBag.Title = "Simple Web Calendar";
   Layout = "~/Views/Shared/_Layout.cshtml";
+
+  DateTime target = new DateTime(Model.year, Model.month, 1);
+  DateTime prevMonth = target.AddMonths(-1);
+  DateTime nextMonth = target.AddMonths(1);
 }
 
-<h2>@Model.year. @Model.month</h2>
+<h2>@target.ToString("yyyy. M")</h2>
+
+<div id="prev">
+  <a href="/SimpleWebCalendar/@prevMonth.ToString("yyyy")/@prevMonth.ToString("MM")">&lt;&lt; @prevMonth.ToString("yyyy/M")</a>
+</div>
 
 <table id="calendar">
   <thead>
@@ -34,5 +42,8 @@
       </tr>
     }
   </tbody>
-
 </table>
+
+<div id="next">
+  <a href="/SimpleWebCalendar/@nextMonth.ToString("yyyy")/@nextMonth.ToString("MM")">@nextMonth.ToString("yyyy/M") &gt;&gt;</a>
+</div>
