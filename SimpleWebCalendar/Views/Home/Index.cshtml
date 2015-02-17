@@ -1,0 +1,38 @@
+﻿
+@{
+  ViewBag.Title = "Simple Web Calendar";
+  Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.year. @Model.month</h2>
+
+<table id="calendar">
+  <thead>
+    <tr>
+      @foreach (string weekDay in Model.WeekDays)
+      {
+        <td>@weekDay</td>
+      }
+    </tr>
+  </thead>
+
+  <tbody>
+    @foreach (var week in Model.WeekAndDayList)
+    {
+      <tr>
+        @foreach (DateTime date in week)
+        {
+          if (date.Month == Model.month)
+          {
+            <td>@date.Day</td>
+          }
+          else
+          {
+            <td style="color: #ccc;">@date.Day</td>
+          }
+        }
+      </tr>
+    }
+  </tbody>
+
+</table>
